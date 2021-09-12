@@ -1,0 +1,11 @@
+{
+    "name": "OsamaMohammed/laravel-osa-helpers",
+    "description": "Library for laravel.",
+    "autoload": {
+        "psr-4": {
+            "OsamaMohammed\\LaravelOsaHelpers\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
