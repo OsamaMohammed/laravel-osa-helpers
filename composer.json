@@ -6,6 +6,12 @@
             "OsamaMohammed\\LaravelOsaHelpers\\": "src/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/OsamaMohammed/laravel-osa-helpers"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
