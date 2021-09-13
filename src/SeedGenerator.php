@@ -41,7 +41,7 @@ class SeedGenerator
     public function run($tableName, $totalRows, $fields)
     {
 
-        for ($i = 0; $i < $this->totalRows; $i += $this->perTrans) {
+        for ($i = 0; $i < $totalRows; $i += $this->perTrans) {
             $array = [];
             for ($k = 0; $k < $this->perTrans; $k++) {
                 // Prepare the array
@@ -51,7 +51,7 @@ class SeedGenerator
                     'created_at' => $time,
                     'updated_at' => $time,
                 ];
-                foreach ($this->fields as $field => $crateria) {
+                foreach ($fields as $field => $crateria) {
                     switch ($crateria[0]) {
                         case 'username':
                             $tmp[$field] = substr($this->faker->userName, 0, $crateria[1] ?? 45);
@@ -80,11 +80,14 @@ class SeedGenerator
                 $array[] = $tmp;
             }
             // Execute the array insert
-            DB::table($this->tableName)->insert($array);
+            DB::table($tableName)->insert($array);
         }
-        echo "[+] Inserted $this->totalRows rows to $this->tableName\r\n";
-        echo "[+][+] Images are detected, move the images to public/files\r\n";
-        return DB::table($this->tableName)->pluck('id')->toArray();
+        echo "[+] Inserted $totalRows rows to $tableName\r\n";
+        if ($this->showImageMessage) {
+            echo "[+][+] Images are detected, move the images to public/files\r\n";
+        }
+        $this->showImageMessage = false;
+        return DB::table($tableName)->pluck('id')->toArray();
     }
 
 }
