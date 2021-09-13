@@ -1,17 +1,16 @@
 {
-    "name": "OsamaMohammed/laravel-osa-helpers",
+    "name": "osamamohammed/laravel-osa-helpers",
     "description": "Library for laravel.",
     "autoload": {
         "psr-4": {
             "OsamaMohammed\\LaravelOsaHelpers\\": "src/"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/OsamaMohammed/laravel-osa-helpers"
-        }
-    ],
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require": {
+        "fzaninotto/faker": "^1.9",
+        "nesbot/carbon": "^2.53",
+        "illuminate/support": "^8.60"
+    }
 }
