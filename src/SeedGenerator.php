@@ -8,10 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class SeedGenerator
 {
-    private $fields = [];
-    private $totalRows = 10;
     private $perTrans = 10;
-    private $tableName = '';
     public $arabicLocale = false;
     private $faker;
     private $imageList = [];
@@ -22,7 +19,7 @@ class SeedGenerator
      *
      * @param string  $tableName
      * @param integer $totalRows
-     * @param array   $fields   should be ['fieldName' => ['username', length], ['varchar', length], ['pass'], ['number', min, max], ['phone'], ['id', array]] supported is number, varchar
+     * @param array   $fields   should be ['fieldName' => ['username', length], ['varchar', length], ['pass'], ['number', min, max], ['phone'], ['id', array], ['image']]
      * @param boolean $arabicLocale
      * @param integer $perTrans
      */
